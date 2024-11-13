@@ -8,19 +8,19 @@ len_a =len(arr_a)
 len_b = len(arr_b)
 arr_b.sort()
 
-for i in range(len_a):
+for _ in range(len_a):
     if start not in arr_a:
         print('No')
         break
-    elif len(arr_a[i:]) < len_b:
+    elif len(arr_a[arr_a.index(start):]) < len_b:
         print('No')
         break
     else:
-        arr = arr_a[i:i+len_b]
+        arr = arr_a[arr_a.index(start):arr_a.index(start)+len_b]
         arr.sort()
         if arr == arr_b:
             print('Yes')
             break
         else:
-            arr_a = arr_a[i+1:]
+            arr_a = arr_a[arr_a.index(start)+1:]
             continue
