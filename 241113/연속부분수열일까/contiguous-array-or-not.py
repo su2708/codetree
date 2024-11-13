@@ -21,7 +21,6 @@ for idx in indice:
             break
         else:
             if cnt!=0:
-                print('hi')
                 continue
             else:
                 print('No')
