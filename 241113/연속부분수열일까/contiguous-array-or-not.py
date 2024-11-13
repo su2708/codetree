@@ -2,7 +2,8 @@ n1, n2 = map(int, input().split())
 arr_a = list(map(int, input().split()))
 arr_b = list(map(int, input().split()))
 
-indice = [idx for idx, val in enumerate(arr_a) if val==arr_b[0]]
+start = arr_b[0]
+indice = [idx for idx, val in enumerate(arr_a) if val==start]
 
 length = len(arr_b)
 arr_b.sort()
@@ -10,7 +11,10 @@ cnt = len(indice)
 
 for idx in indice:
     cnt -= 1
-    if len(arr_a[idx:]) < length:
+    if start not in arr_a:
+        print('No')
+        break
+    elif len(arr_a[idx:]) < length:
         print('No')
         break
     else:
