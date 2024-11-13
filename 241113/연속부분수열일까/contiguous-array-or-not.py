@@ -4,16 +4,25 @@ arr_b = list(map(int, input().split()))
 
 indice = [idx for idx, val in enumerate(arr_a) if val==arr_b[0]]
 
+length = len(arr_b)
+arr_b.sort()
+cnt = len(indice)
+
 for idx in indice:
-    if len(arr_a[idx:]) < len(arr_b):
+    cnt -= 1
+    if len(arr_a[idx:]) < length:
         print('No')
         break
     else:
-        arr = arr_a[idx:len(arr_b)+idx]
+        arr = arr_a[idx:idx+length]
         arr.sort()
-        arr_b.sort()
         if arr == arr_b:
             print('Yes')
             break
         else:
-            continue
+            if cnt!=0:
+                print('hi')
+                continue
+            else:
+                print('No')
+                break
