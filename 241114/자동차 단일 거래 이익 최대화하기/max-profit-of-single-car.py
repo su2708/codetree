@@ -12,4 +12,7 @@ for elem in arr[1:]:
         max_val = elem
         difference.append(max_val-min_val)
 
-print(max(difference))    
+if min_val == max_val:
+    print(0)
+else:
+    print(max(difference))
